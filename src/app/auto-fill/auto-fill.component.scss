@@ -1,4 +1,11 @@
-@import 'src/app/authenticated/verification/components/shared/common-declarations';
+$screen-sm: 499px;
+$screen-md: 729px;
+
+@mixin media-max-width($to) {
+  @media screen and (max-width: $to) {
+    @content;
+  }
+}
 
 .verification-form {
   max-width: 420px;
