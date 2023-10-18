@@ -1,4 +1,15 @@
 <div class="otp-container">
-  <input type="text" id="otp" name="otp" [(ngModel)]="otp" appWebOtp>
+  <div class="code-input-container">
+    <input type="text" style="display: none;" [(ngModel)]="otp" appWebOtp>
+    <code-input
+      [isCodeHidden]="false"
+      [codeLength]="6"
+      [isCharsCode]="false"
+      [initialFocusField]="0"
+      [(ngModel)]="otp"
+    >
+    </code-input>
+  </div>
+  <!--  <input type="text" id="otp" name="otp" [(ngModel)]="otp" appWebOtp>-->
 </div>
 

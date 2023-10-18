@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { WebOtpDirective } from './web-otp.directive';
 import { AutoFillComponent } from './auto-fill/auto-fill.component';
 import {FormsModule} from "@angular/forms";
+import {CodeInputModule} from "angular-code-input";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     FormsModule,
+    CodeInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
