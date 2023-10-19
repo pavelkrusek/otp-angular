@@ -1,4 +1,6 @@
 <div class="otp-container">
+  <div *ngIf="isVisible" style="background-color: red; width: 100px; height: 100px;">
+  </div>
   <div class="code-input-container">
     <input type="text" style="display: none;" [(ngModel)]="otp" appWebOtp>
     <code-input
@@ -7,6 +9,7 @@
       [isCharsCode]="false"
       [initialFocusField]="0"
       [(ngModel)]="otp"
+      (codeCompleted)="onCodeCompleted($event)"
     >
     </code-input>
   </div>

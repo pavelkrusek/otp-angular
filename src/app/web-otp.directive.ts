@@ -9,10 +9,7 @@ interface CredentialRequestOptions {
 })
 export class WebOtpDirective implements OnInit, OnDestroy {
   private ac = new AbortController();
-  private timer: number | null = null;
   constructor(private el: ElementRef) { };
-
-  @Input('timeout') timeout?: number;
 
   ngOnInit(): void {
     const options: CredentialRequestOptions = {
@@ -24,17 +21,9 @@ export class WebOtpDirective implements OnInit, OnDestroy {
     }).catch(err => {
       console.log(err);
     });
-    if (this.timeout) {
-      this.timer = setTimeout(() => {
-        this.ac.abort();
-      }, this.timeout)
-    }
   }
+
   ngOnDestroy(): void {
     this.ac.abort();
-    if (this.timer !== null) {
-      clearTimeout(this.timer);
-      this.timer = null;
-    }
   }
 }

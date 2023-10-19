@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AutoFillComponent {
   otp: string = '';
+  isVisible = false;
+
+  onCodeCompleted(code: string) {
+    this.isVisible = true;
+  }
 }
